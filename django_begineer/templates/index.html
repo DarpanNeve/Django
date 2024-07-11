@@ -1,15 +1,5 @@
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hello, Django!</h1>
-    <p>Welcome to Django Begineer Tutorial</p>
-    <p>Click <a href="{% url 'about' %}">here</a> to know more about us.</p>
-    <p>Click <a href="{% url 'contact' %}">here</a> to contact us.</p>
-</body>
-</html>
+{% extends "layout.html" %} {% block title %}Home Page{% endblock%} # This is
+the home page of the Django beginner project. {% block content %}
+<h1>Welcome to Django</h1>
+<p>This is the home page of the Django beginner project.</p>
+{% endblock content %}
