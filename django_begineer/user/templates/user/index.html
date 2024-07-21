@@ -1,0 +1,30 @@
+{% load static tailwind_tags %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    {% tailwind_css %}
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- Define the grid container -->
+    <div class="grid grid-cols-3 gap-4 p-4">
+      {% for user in users %}
+      <!-- Individual card -->
+      <div class="bg-blue-200 p-4 rounded-lg shadow-md">
+        <img
+          class="w-full h-64 object-cover rounded-t-lg"
+          src="{{ user.image.url }}"
+          alt="{{ user.name }}"
+        />
+        <h1 class="text-lg font-semibold mt-2">{{ user.name }}</h1>
+        <h3 class="text-sm text-gray-600">{{ user.date_added }}</h3>
+        <button>
+          <a href="{% url 'user_detail' user.id %}">View</a>
+        </button>
+      </div>
+      {% endfor %}
+    </div>
+  </body>
+</html>
