@@ -19,3 +19,6 @@ def home(request):
 def user_detail(request,user_id):
     user=get_object_or_404(User,pk=user_id)
     return render(request,'user/user_detail.html',{'user':user})
+
+def create_user(request):
+    return render(request,'user/create_user.html')

@@ -9,4 +9,5 @@ urlpatterns = [
     path('', views.home,name='user_home'),
     # path('about/', views.about,name='about'),
     path('<int:user_id>/', views.user_detail,name='user_detail'),
+    path('create/', views.create_user,name='create_user'),
 ]
